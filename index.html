@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dymmay-Data Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(186, 186, 197);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box button {
+            background-color: rgb(186, 81, 81);
+            padding: 23px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .box button:hover {
+            background-color: rgb(155, 18, 18);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hi..! let's Generate the Dummay Employee Data</h2>
+    <div class="box">
+        <button id="btn">Click To Generate Data</button>
+    </div>
+    <script>
+        // let btn=document.querySelector(".box").getElementsByTagName("button")
+        console.log(btn);
+        btn.addEventListener("click", (e) => {
+            async function generateData() {
+                try {
+                const x = await fetch("http://127.0.0.1:4000/generate", {method: "GET"});
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            }
+            generateData()
+        });
+    </script>
+</body>
+
+</html>
